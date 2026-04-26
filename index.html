@@ -220,41 +220,69 @@
         <p>Gerakan Pramuka di SD Negeri 2 Ngasem merupakan wadah utama pembentukan karakter siswa. Kami fokus mencetak generasi yang mandiri, disiplin, dan memiliki jiwa korsa yang tinggi.</p>
         
         <div class="schedule-box">
-    <span style="font-size: 1.2rem; display: block; margin-bottom: 10px;">🗓️ JADWAL LATIHAN :</span>
-    <table style="border-collapse: collapse; width: 100%; color: var(--pramuka-dark); font-size: 0.95rem;">
-        <tr>
-            <td style="padding: 5px 0; width: 1%; white-space: nowrap; font-weight: bold;">Golongan Siaga</td>
-            <td style="padding: 5px 10px;">:</td>
-            <td style="padding: 5px 0;">Setiap Hari Jumat | 07.00 - 09.00 WIB</td>
-        </tr>
-        <tr>
-            <td style="padding: 5px 0; white-space: nowrap; font-weight: bold;">Golongan Penggalang</td>
-            <td style="padding: 5px 10px;">:</td>
-            <td style="padding: 5px 0;">Setiap Hari Jumat | 13.00 - 15.00 WIB</td>
-        </tr>
-    </table>
-</div>
+    <span style="font-size: 1.2rem; display: block; margin-bottom: 15px; border-bottom: 1px solid var(--pramuka-dark); padding-bottom: 5px;">
+        🗓️ JADWAL LATIHAN
+    </span>
+
+    <style>
+        .sch-group {
+            display: flex;
+            margin-bottom: 12px;
+            gap: 10px;
+        }
+        .sch-label {
+            font-weight: 800;
+            min-width: 160px;
+            color: var(--pramuka-red);
+        }
+        .sch-time {
+            flex: 1;
+        }
+
+        /* Perbaikan otomatis khusus HP */
+        @media (max-width: 600px) {
+            .sch-group {
+                flex-direction: column; /* Menumpuk ke bawah di HP */
+                gap: 2px;
+                margin-bottom: 15px;
+                border-left: 3px solid var(--pramuka-red);
+                padding-left: 10px;
+            }
+            .sch-label {
+                font-size: 0.9rem;
+            }
+            .sch-time {
+                font-size: 0.85rem;
+                color: #333;
+            }
+        }
+    </style>
+
+    <div class="sch-group">
+        <div class="sch-label">Golongan Siaga</div>
+        <div class="sch-time">Setiap Hari Jumat | 07.00 - 09.00 WIB</div>
     </div>
+
+    <div class="sch-group">
+        <div class="sch-label">Golongan Penggalang</div>
+        <div class="sch-time">Setiap Hari Jumat | 13.00 - 15.00 WIB</div>
+    </div>
+</div>
 
     <div class="info-card">
     <h2>Materi Utama</h2>
-    <table style="border-collapse: collapse; width: 100%; color: var(--white); font-size: 1.05rem;">
-        <tr>
-            <td style="padding: 8px 0; width: 1%; white-space: nowrap; font-weight: bold; vertical-align: top;">Teknik Kepramukaan</td>
-            <td style="padding: 8px 10px; vertical-align: top;">:</td>
-            <td style="padding: 8px 0;">Tali temali, sandi-sandi, Morse, dan Semaphore.</td>
-        </tr>
-        <tr>
-            <td style="padding: 8px 0; white-space: nowrap; font-weight: bold; vertical-align: top;">Penjelajahan</td>
-            <td style="padding: 8px 10px; vertical-align: top;">:</td>
-            <td style="padding: 8px 0;">Tanda jejak dan orientasi medan.</td>
-        </tr>
-        <tr>
-            <td style="padding: 8px 0; white-space: nowrap; font-weight: bold; vertical-align: top;">Kemandirian</td>
-            <td style="padding: 8px 10px; vertical-align: top;">:</td>
-            <td style="padding: 8px 0;">Berkemah dan memasak rimba.</td>
-        </tr>
-    </table>
+    <div class="sch-group">
+        <div class="sch-label" style="color: var(--pramuka-gold);">Teknik Pramuka</div>
+        <div class="sch-time" style="color: white;">Tali temali, sandi Morse, dan Semaphore.</div>
+    </div>
+    <div class="sch-group">
+        <div class="sch-label" style="color: var(--pramuka-gold);">Penjelajahan</div>
+        <div class="sch-time" style="color: white;">Tanda jejak dan orientasi medan.</div>
+    </div>
+    <div class="sch-group">
+        <div class="sch-label" style="color: var(--pramuka-gold);">Kemandirian</div>
+        <div class="sch-time" style="color: white;">Berkemah dan memasak rimba.</div>
+    </div>
 </div>
 
     <h2 style="text-align: center; margin-bottom: 30px;">Dokumentasi Kegiatan</h2>
