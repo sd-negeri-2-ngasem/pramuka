@@ -8,154 +8,124 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap');
 
         :root {
-            --primary-green: #1a3c34;
-            --pramuka-red: #b71c1c;   /* Merah Dasar */
-            --pramuka-gold: #fbc02d;  /* Kuning Detail */
-            --pramuka-dark: #121212;  /* Hitam Panel */
+            --pramuka-red: #b71c1c;   
+            --pramuka-gold: #fbc02d;  
+            --pramuka-dark: #121212;  
             --white: #ffffff;
         }
 
-        /* Reset & Base */
         body { 
             margin: 0; 
             font-family: 'Inter', sans-serif; 
             background: var(--pramuka-red); 
-            color: var(--pramuka-gold); /* Teks di luar kotak otomatis Kuning */
+            color: var(--pramuka-gold); 
             line-height: 1.6;
         }
 
+        /* --- NAVIGASI --- */
         header {
-    background: var(--pramuka-dark);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    padding: 0 5%; /* Padding diperkecil agar lega di HP */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 65px;
-}
+            background: var(--pramuka-dark);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 0 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+            border-bottom: 2px solid var(--pramuka-gold);
+        }
 
-.logo { 
-    font-family: 'Playfair Display', serif; 
-    font-weight: 700; 
-    color: var(--primary); 
-    font-size: 1.1rem; /* Ukuran logo lebih proporsional */
-}
+        .logo img { height: 45px; width: auto; display: block; }
 
-nav { 
-    display: flex; 
-    gap: 15px; /* Jarak antar menu diperkecil untuk layar kecil */
-    align-items: center; 
-}
+        nav { display: flex; gap: 20px; align-items: center; }
+        .nav-item { position: relative; list-style: none; }
+        .nav-item a {
+            text-decoration: none;
+            color: var(--white);
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+        .nav-item a:hover { color: var(--pramuka-gold); }
 
-.nav-item { position: relative; list-style: none; }
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: var(--pramuka-dark);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border-radius: 8px;
+            padding: 10px 0;
+            min-width: 180px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: 0.3s;
+            border: 1px solid var(--pramuka-gold);
+        }
 
-.nav-item a {
-    text-decoration: none;
-    color: var(--dark);
-    font-weight: 600;
-    font-size: 0.85rem; /* Font lebih kecil agar muat di HP */
-    transition: 0.3s;
-    white-space: nowrap; /* Mencegah teks menu turun ke bawah */
-}
+        .nav-item:hover .dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+        .dropdown a { display: block; padding: 10px 20px; font-size: 0.85rem; color: var(--white); }
+        .dropdown a:hover { background: var(--pramuka-red); color: var(--white); }
 
-/* Dropdown Menu - Optimasi Hover di Mobile */
-.dropdown {
-    position: absolute;
-    top: 100%;
-    right: 0; /* Ubah ke kanan agar tidak keluar layar kiri */
-    background: var(--pramuka-dark);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    border-radius: 10px;
-    padding: 10px 0;
-    min-width: 160px;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(10px);
-    transition: 0.3s;
-}
-
-/* Khusus Mobile: Jika layar di bawah 600px */
-@media (max-width: 600px) {
-    header {
-        padding: 0 15px;
-    }
-    
-    /* Sembunyikan beberapa menu yang kurang krusial di bar navigasi utama mobile */
-    /* Atau kita kecilkan font-nya lebih ekstrem */
-    .nav-item a {
-        font-size: 0.75rem;
-    }
-    
-    nav {
-        gap: 10px;
-    }
-
-    /* Memastikan dropdown tidak tertutup layar */
-    .dropdown {
-        min-width: 140px;
-    }
-}
-
-/* Efek Hover tetap sama */
-.nav-item:hover .dropdown {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-.dropdown a {
-    display: block;
-    padding: 10px 15px;
-    font-size: 0.8rem;
-}
-
-        /* Hero Section */
+        /* --- HERO SECTION --- */
         .ekskul-hero {
             background: linear-gradient(rgba(0,0,0,0.7), rgba(183, 28, 28, 0.4)), 
-                        url('https://drive.google.com/thumbnail?sz=w1920&id=1l_bUjw-EfJhegj51CIDVSSdovX5Jx518') center/cover;
-            height: 350px;
+                        url('https://drive.google.com/thumbnail?sz=w1920&id=16kCmXl1OjnjNwMlpo8fdADWPyEU4XxL6') center/cover;
+            height: 400px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
             border-bottom: 6px solid var(--pramuka-gold);
+            padding: 0 20px;
         }
 
         .ekskul-hero h1 { 
             font-family: 'Playfair Display', serif; 
-            font-size: clamp(2.5rem, 8vw, 4rem); 
+            font-size: clamp(2.5rem, 8vw, 4.5rem); 
             color: var(--pramuka-gold); 
             text-transform: uppercase;
             margin: 0;
+            line-height: 1;
             text-shadow: 3px 3px 10px rgba(0,0,0,0.8);
         }
 
-        .ekskul-hero p { color: var(--white); font-weight: 400; margin-top: 10px; font-size: 1.1rem; }
-
-        /* Content Area */
-        .content-section { padding: 60px 10%; max-width: 1000px; margin: auto; }
-
-        /* Judul Section (Luar Kotak) */
-        .content-section > h2 { 
-            color: var(--pramuka-gold); 
-            text-align: center;
-            font-size: 2.2rem;
-            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
-            margin-bottom: 40px;
-            font-family: 'Playfair Display', serif;
+        /* Perbaikan Teks Gerakan & Gugus Depan */
+        .ekskul-hero .sub-title {
+            font-family: 'Inter', sans-serif;
+            color: var(--white);
+            font-weight: 700;
+            font-size: 1.5rem; /* Ukuran lebih besar */
+            margin-top: 10px;
+            margin-bottom: 0;
+            line-height: 1.2; /* Rapat */
+            text-transform: uppercase;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
         }
 
-        /* Kartu Informasi (Panel Hitam) */
+        .ekskul-hero .motto {
+            font-family: 'Inter', sans-serif;
+            color: var(--white);
+            font-style: italic;
+            font-weight: 400;
+            font-size: 1.1rem;
+            margin-top: 20px;
+            max-width: 600px;
+            line-height: 1.4;
+        }
+
+        /* --- CONTENT --- */
+        .content-section { padding: 60px 10%; max-width: 1000px; margin: auto; }
+
         .info-card { 
             background: var(--pramuka-dark); 
             padding: 40px; 
             border-radius: 25px; 
             box-shadow: 0 15px 40px rgba(0,0,0,0.5); 
-            margin-bottom: 50px;
+            margin-bottom: 40px;
             border: 2px solid var(--pramuka-gold);
         }
 
@@ -169,32 +139,23 @@ nav {
             margin-top: 0;
         }
 
-        .info-card p, .info-card li {
-            color: var(--white); /* Di dalam kotak hitam, teks harus putih murni agar tajam */
-            font-size: 1.05rem;
-        }
+        .info-card p, .info-card li { color: var(--white); font-size: 1.05rem; }
 
-        ul { padding-left: 20px; }
-        li { margin-bottom: 10px; }
-
-        /* Jadwal Latihan (Kuning Kontras) */
         .schedule-box {
             background: var(--pramuka-gold);
-            color: var(--pramuka-dark); /* Teks hitam di kotak kuning agar terbaca */
-            padding: 25px;
-            border-radius: 15px;
+            color: var(--pramuka-dark);
+            padding: 20px;
+            border-radius: 12px;
             display: block;
             margin-top: 25px;
-            font-weight: 700;
+            font-weight: 800;
             border-left: 10px solid var(--pramuka-red);
         }
 
-        /* Gallery */
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 25px;
-            margin-top: 20px;
         }
 
         .gallery img {
@@ -204,30 +165,27 @@ nav {
             border-radius: 15px;
             border: 4px solid var(--pramuka-dark);
             outline: 2px solid var(--pramuka-gold);
-            transition: 0.3s ease;
         }
 
-        .gallery img:hover { transform: scale(1.05); outline-color: var(--white); }
-
-        /* Footer */
         footer { 
             text-align: center; 
-            padding: 50px 10%; 
-            color: var(--pramuka-gold); 
+            padding: 40px; 
             background: var(--pramuka-dark);
-            margin-top: 50px;
+            color: var(--pramuka-gold);
             border-top: 5px solid var(--pramuka-gold);
         }
 
         @media (max-width: 768px) {
-            .content-section { padding: 40px 5%; }
-            header { padding: 0 5%; }
+            header { padding: 0 15px; }
+            nav { gap: 10px; }
+            .nav-item a { font-size: 0.75rem; }
+            .ekskul-hero .sub-title { font-size: 1.1rem; }
         }
     </style>
 </head>
 <body>
 
-    <header>
+<header>
     <div class="logo"><img src="https://drive.google.com/thumbnail?sz=w50&id=1rOlAs2vp97cNHXlRah0pwXUwy-OjBkKH" alt="Logo"></div>
     <nav>
         <div class="nav-item"><a href="https://sd-negeri-2-ngasem.github.io/beranda/">Beranda</a></div>
@@ -246,44 +204,69 @@ nav {
     </nav>
 </header>
 
-    <div class="ekskul-hero">
-        <h3>Gerakan Pramuka</h3><br><h3>Gugus Depan 09.017 - 09.018</h3>
-        <p>Ikhlas Bakti Bina Bangsa, Ber-budi Bawa Laksana<br>Satyaku Kudarmakan, Darmaku Kubaktikan</p>
+<div class="ekskul-hero">
+    <h1>GERAKAN PRAMUKA</h1>
+    <div class="sub-title">GUGUS DEPAN 09.017 - 09.018</div>
+    <div class="motto">
+        "Ikhlas Bakti Bina Bangsa, Ber-budi Bawa Laksana.<br>
+        Satyaku Kudarmakan, Darmaku Kubaktikan"
+    </div>
+</div>
+
+<div class="content-section">
+    <div class="info-card">
+        <h2>Visi & Karakter</h2>
+        <p>Gerakan Pramuka di SD Negeri 2 Ngasem merupakan wadah utama pembentukan karakter siswa. Kami fokus mencetak generasi yang mandiri, disiplin, dan memiliki jiwa korsa yang tinggi.</p>
+        
+        <div class="schedule-box">
+    <span style="font-size: 1.2rem; display: block; margin-bottom: 10px;">🗓️ JADWAL LATIHAN :</span>
+    <table style="border-collapse: collapse; width: 100%; color: var(--pramuka-dark); font-size: 0.95rem;">
+        <tr>
+            <td style="padding: 5px 0; width: 1%; white-space: nowrap; font-weight: bold;">Golongan Siaga</td>
+            <td style="padding: 5px 10px;">:</td>
+            <td style="padding: 5px 0;">Setiap Hari Jumat | 07.00 - 09.00 WIB</td>
+        </tr>
+        <tr>
+            <td style="padding: 5px 0; white-space: nowrap; font-weight: bold;">Golongan Penggalang</td>
+            <td style="padding: 5px 10px;">:</td>
+            <td style="padding: 5px 0;">Setiap Hari Jumat | 13.00 - 15.00 WIB</td>
+        </tr>
+    </table>
+</div>
     </div>
 
-    <div class="content-section">
-        <div class="info-card">
-            <h2>Visi & Karakter</h2>
-            <p>Gerakan Pramuka di SD Negeri 2 Ngasem merupakan wadah utama pembentukan karakter siswa. Kami fokus mencetak generasi yang mandiri, disiplin, dan memiliki jiwa korsa yang tinggi.</p>
-            
-            <div class="schedule-box">
-                <span style="font-size: 1.2rem;">🗓️ JADWAL LATIHAN:</span><br>
-                Setiap Hari Jumat | Pukul 14.00 - 15.30 WIB
-            </div>
-        </div>
+    <div class="info-card">
+    <h2>Materi Utama</h2>
+    <table style="border-collapse: collapse; width: 100%; color: var(--white); font-size: 1.05rem;">
+        <tr>
+            <td style="padding: 8px 0; width: 1%; white-space: nowrap; font-weight: bold; vertical-align: top;">Teknik Kepramukaan</td>
+            <td style="padding: 8px 10px; vertical-align: top;">:</td>
+            <td style="padding: 8px 0;">Tali temali, sandi-sandi, Morse, dan Semaphore.</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px 0; white-space: nowrap; font-weight: bold; vertical-align: top;">Penjelajahan</td>
+            <td style="padding: 8px 10px; vertical-align: top;">:</td>
+            <td style="padding: 8px 0;">Tanda jejak dan orientasi medan.</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px 0; white-space: nowrap; font-weight: bold; vertical-align: top;">Kemandirian</td>
+            <td style="padding: 8px 10px; vertical-align: top;">:</td>
+            <td style="padding: 8px 0;">Berkemah dan memasak rimba.</td>
+        </tr>
+    </table>
+</div>
 
-        <div class="info-card">
-            <h2>Materi Pembelajaran</h2>
-            <ul>
-                <li><b>Teknik Kepramukaan:</b> Tali temali (pioneering), sandi Morse, dan Semaphore.</li>
-                <li><b>Penjelajahan:</b> Tanda jejak, orientasi medan, dan Peta Pita.</li>
-                <li><b>Kemandirian:</b> Berkemah, memasak rimba, dan pertolongan pertama (P3K).</li>
-                <li><b>Spiritual:</b> Pembiasaan ibadah dan adab di alam terbuka.</li>
-            </ul>
-        </div>
-
-        <h2>Dokumentasi Kegiatan</h2>
-        <div class="gallery">
-            <img src="https://drive.google.com/thumbnail?sz=w800&id=1l_bUjw-EfJhegj51CIDVSSdovX5Jx518" alt="Latihan Mingguan">
-            <img src="https://drive.google.com/thumbnail?sz=w800&id=1FzWfARAMMOsNk70605HK6ryDTwSz7qyN" alt="Kegiatan Lapangan">
-            <img src="https://drive.google.com/thumbnail?sz=w800&id=1qppMRg385pHmeqTVz-9cCiQmN0HhjjjY" alt="Upacara Pelantikan">
-        </div>
+    <h2 style="text-align: center; margin-bottom: 30px;">Dokumentasi Kegiatan</h2>
+    <div class="gallery">
+        <img src="https://drive.google.com/thumbnail?sz=w800&id=10J9jGVbHtUeMw0E5Ileg37wtkS-8GJHa" alt="Foto 1">
+        <img src="https://drive.google.com/thumbnail?sz=w800&id=1JUGhXtvG3iCi1Y9IPbMV_OclIrWtoKLU" alt="Foto 2">
+        <img src="https://drive.google.com/thumbnail?sz=w800&id=1KhpEjnqc8_P6NW_7lGr2jYaqNjQYqfys" alt="Foto 3">
     </div>
+</div>
 
-    <footer>
-        <p style="margin:0;">&copy; 2026 SD Negeri 2 Ngasem - Gugus Depan Pramuka</p>
-        <p style="font-size: 0.7rem; margin-top: 10px; opacity: 0.8;">Membentuk Generasi Unggul & Berkarakter</p>
-    </footer>
+<footer>
+    &copy; 2026 SD Negeri 2 Ngasem - Gugus Depan Pramuka
+</footer>
 
 </body>
 </html>
